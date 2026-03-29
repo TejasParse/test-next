@@ -1,4 +1,12 @@
+import { redirect } from "next/navigation";
+
+
 export default function Home() {
+  const country = process.env.COUNTRY?.toLowerCase();
+
+  if (country && country !== "india") {
+    redirect(`/${country}`);
+  }
   return (
     <main className="flex flex-1 items-center justify-center bg-zinc-50 px-6 py-16">
       <div className="w-full max-w-3xl rounded-3xl bg-white p-10 shadow-sm">
