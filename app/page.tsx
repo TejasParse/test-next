@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 export default function Home() {
   const country = process.env.COUNTRY?.toLowerCase();
 
-  if (country && country !== "india") {
+  if (country) {
     redirect(`/${country}`);
   }
   return (
