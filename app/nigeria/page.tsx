@@ -3,8 +3,8 @@ import { redirect } from "next/navigation";
 export default function NigeriaPage() {
   const country = process.env.COUNTRY?.toLowerCase();
 
-  if (country === "india") {
-    redirect("/india");
+  if (country && country !== "nigeria") {
+    redirect(`/${country}`);
   }
 
   return (
